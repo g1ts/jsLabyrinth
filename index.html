@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>10 PRINT CHR$(205.5+RND(1));: GOTO 10</title>
-<script src="l.js"></script>
+<script src="js/l.js"></script>
 <style type='text/css'>
   #outer {
 	  height: 300px;
@@ -17,9 +17,19 @@
 	  font-weight: bold;
 	  font-size: 16pt;
   }
+  #repo {
+	  position: absolute;
+	  bottom: 5px;
+	  right: 10px;
+	  background-color: #AAA;
+	  padding: 5px;
+  }
 </style>
 </head>
 <body onload="mkbg();">
-<div id='outer'><span id='inner'>10 PRINT CHR$(205.5+RND(1));: GOTO 10</span></div>
+<div id='outer'>
+  <span id='inner'>10 PRINT CHR$(205.5+RND(1));: GOTO 10</span>
+</div>
+<div id="repo">repository: <a href="https://github.com/g1ts/jsLabyrinth">https://github.com/g1ts/jsLabyrinth</a></div>
 </body>
 </html>

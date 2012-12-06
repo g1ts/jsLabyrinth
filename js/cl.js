@@ -14,7 +14,7 @@ function mkbg(){
   }
   setBg();
   if(_i){clearInterval(_i);}
-  _i = setInterval(changeRndTile,1000);
+  _i = setInterval(changeRndTile,500);
 }
 
 function changeRndTile(){
