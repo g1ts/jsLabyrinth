@@ -51,10 +51,12 @@ function init(){
   c.height = sh;
   context = c.getContext('2d');
   context.lineWidth = 3;
+  context.strokeStyle = '#ae94d9';
+  context.fillStyle = '#3a2362';
 }
 
 function drawLine(context, l, X, Y, d){
-  context.clearRect(X,Y,l,l);
+  context.fillRect(X,Y,l,l);
   if(d==true){
     var x1=X;
     var y1=Y;
