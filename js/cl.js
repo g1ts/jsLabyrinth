@@ -2,7 +2,6 @@ window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.Mo
 window.URL = window.URL || window.webkitURL;
 
 var l = 26;
-var _i = null;
 
 function mkbg(){
   init();
@@ -12,15 +11,13 @@ function mkbg(){
 
   for(var i=0;i<sw/l;i++){
     for(var j=0;j<sh/l;j++){
-      dravLine(context, l, i*l, j*l, Math.round(Math.random()));
+      drawLine(context, l, i*l, j*l, Math.round(Math.random()));
     }
   }
   setBg();
-  if(_i){clearInterval(_i);}
-  _i = setInterval(changeRndTile,1000);
 }
 
-function changeRndTile(){
+function update(){
   var b = document.getElementsByTagName('body')[0];
   var sw = b.scrollWidth;
   var sh = b.scrollHeight;
@@ -28,7 +25,7 @@ function changeRndTile(){
   for(var i=0;i<c;i++){
     var x = l*Math.round(sw/l*Math.random());
     var y = l*Math.round(sh/l*Math.random());
-    dravLine(context, l, x, y, Math.round(Math.random()));
+    drawLine(context, l, x, y, Math.round(Math.random()));
   }
   setBg();
 }
@@ -56,8 +53,7 @@ function init(){
   context.lineWidth = 3;
 }
 
-function dravLine(context, l, X, Y, d){
-  //context.clearRect(X-1,Y-1,l+2,l+2);
+function drawLine(context, l, X, Y, d){
   context.clearRect(X,Y,l,l);
   if(d==true){
     var x1=X;

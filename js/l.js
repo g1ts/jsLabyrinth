@@ -2,7 +2,6 @@ var imgs = [];
 var positions = [];
 var l = 26;
 var img = ['1.png', '2.png'];
-var _i=null;
 
 function mkbg(){
   var b = document.getElementsByTagName('body')[0];
@@ -16,11 +15,9 @@ function mkbg(){
     }
   }
   setBg();
-  if(_i){clearInterval(_i);}
-  _i = setInterval(changeRndTile,1000);
 }
 
-function changeRndTile(){
+function update(){
   for(var i=0;i<imgs.length*0.05;i++){
     imgs[Math.floor(imgs.length*Math.random())]=('url('+img[Math.round(Math.random())]+')');
   }
