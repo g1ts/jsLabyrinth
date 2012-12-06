@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>10 PRINT CHR$(205.5+RND(1));: GOTO 10</title>
+<script src="js/canvas-to-blob.min.js"></script>
+<script src="cl.js"></script>
+<style type='text/css'>
+  #outer {
+	  height: 300px;
+	  line-height: 300px;
+	  text-align: center;			
+  }
+
+  #inner {
+	  outline: solid #99c medium;
+	  padding: 50px;			
+	  background: #336;
+	  color: #99c;
+	  font-weight: bold;
+	  font-size: 16pt;
+  }
+</style>
+</head>
+<body onload="mkbg();">
+<div id='outer'><span id='inner'>10 PRINT CHR$(205.5+RND(1));: GOTO 10</span></div>
+</body>
+</html>
