@@ -1,3 +1,6 @@
+window.BlobBuilder = window.BlobBuilder || window.WebKitBlobBuilder || window.MozBlobBuilder || window.MSBlobBuilder;
+window.URL = window.URL || window.webkitURL;
+
 var l = 26;
 var _i = null;
 
@@ -34,7 +37,6 @@ function setBg(){
   var b = document.getElementsByTagName('body')[0];
   c.toBlob(function(blob){
     var u = URL.createObjectURL(blob);
-    var oldImg = b.style.backgroundImage;
     b.style.backgroundImage += ", url('" + u + "')";
     b.style.backgroundRepeat = "no-repeat";
     setTimeout(function(){
