@@ -32,7 +32,7 @@ function update(){
 
 function setBg(){
   var b = document.getElementsByTagName('body')[0];
-  if(typeof window.Blob == "function"){
+  if(typeof window.Blob == "function" && typeof c.toBlob == "function"){
     c.toBlob(function(blob){
       var u = URL.createObjectURL(blob);
       b.style.backgroundImage += ", url('" + u + "')";
