@@ -42,7 +42,11 @@ function setBg(){
       },200);
     });
   }else{
-    b.style.backgroundImage = 'url(' + c.toDataURL("image/png") + ')';
+    var u = c.toDataURL("image/png");
+    b.style.backgroundImage += ', url(' + u + ')';
+    setTimeout(function(){
+      b.style.backgroundImage = 'url(' + u + ')';
+    },200);
   }
 }
 
