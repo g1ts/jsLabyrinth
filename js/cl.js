@@ -32,14 +32,18 @@ function update(){
 
 function setBg(){
   var b = document.getElementsByTagName('body')[0];
-  c.toBlob(function(blob){
-    var u = URL.createObjectURL(blob);
-    b.style.backgroundImage += ", url('" + u + "')";
-    b.style.backgroundRepeat = "no-repeat";
-    setTimeout(function(){
-      b.style.backgroundImage = "url('" + u + "')";
-    },200);
-  })
+  if(typeof window.Blob == "function"){
+    c.toBlob(function(blob){
+      var u = URL.createObjectURL(blob);
+      b.style.backgroundImage += ", url('" + u + "')";
+      b.style.backgroundRepeat = "no-repeat";
+      setTimeout(function(){
+        b.style.backgroundImage = "url('" + u + "')";
+      },200);
+    });
+  }else{
+    b.style.backgroundImage = 'url(' + c.toDataURL("image/png") + ')';
+  }
 }
 
 function init(){
